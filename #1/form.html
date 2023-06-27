@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CardValidator</title>
+    <meta charset="utf-8" />
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Card Validator</h3>
+    <form action="card.php" method="POST">
+        <p>Card number: <input type="text" name="card_number" required pattern="[0-9]{13,16}"/></p>
+        <p class="error">Введите от 13 до 16 цифр</p>
+        <input type="submit" value="Проверить">
+    </form>
+    <script>
+        var errorElement = document.querySelector('.error');
+        var cardNumberInput = document.querySelector('input[name="card_number"]');
+
+        cardNumberInput.addEventListener('input', function() {
+            if (cardNumberInput.validity.valid) {
+                errorElement.style.display = 'none';
+            } else {
+                errorElement.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
