@@ -19,14 +19,15 @@ class SendMailService
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->Host = 'ssl://smtp.rambler.ru';
+        $mail->Host = 'ssl://smtp.yandex.ru'; // Укажите smtp-сервер, например, smtp.yandex.ru
         $mail-> Port = 465;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->SMTPAuth = true;
-        $mail->Username = 'testmailer08@rambler.ru';
-        $mail->Password = 'Passwordformailer08';
-        $mail->setFrom('testmailer08@rambler.ru', 'Instant Remember');
-        $mail->AddAddress("testaddress08@rambler.ru");
+        $mail->Username = 'instantremember@yandex.ru'; // Укажите ваш email для отправки
+        $mail->Password = 'tlcrnokrstrrfpfp'; // Укажите пароль от вашего email
+        $mail->setFrom('instantremember@yandex.ru', 'Instant Remember');
+        
+        $mail->AddAddress('user08@rambler.ru'); // Укажите email получателя
         $mail->Subject = 'subject';
         $mail->Body = 'body';
 
