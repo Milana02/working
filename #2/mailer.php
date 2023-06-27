@@ -27,7 +27,7 @@ class SendMailService
         $mail->Password = 'tlcrnokrstrrfpfp'; // Укажите пароль от вашего email
         $mail->setFrom('instantremember@yandex.ru', 'Instant Remember');
         
-        $mail->AddAddress('user08@rambler.ru'); // Укажите email получателя
+        $mail->AddAddress('user08@yandex.ru'); // Укажите email получателя
         $mail->Subject = 'subject';
         $mail->Body = 'body';
 
